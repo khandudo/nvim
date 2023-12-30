@@ -26,6 +26,9 @@ opt.fillchars = { eob = " " }
 opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = "a"
+opt.relativenumber = true
+
+opt.scrolloff = 8
 
 -- Numbers
 opt.number = true
@@ -35,7 +38,7 @@ opt.ruler = false
 -- disable nvim intro
 opt.shortmess:append "sI"
 
-opt.signcolumn = "yes"
+opt.signcolumn = "auto:1"
 opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true
@@ -62,6 +65,13 @@ vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin" .. (is_windows and ";" or "
 
 -------------------------------------- autocmds ------------------------------------------
 local autocmd = vim.api.nvim_create_autocmd
+
+-- Save on focus lost
+autocmd("FocusLost", {
+    pattern = "*",
+    command = ":wa"
+  })
+
 
 -- dont list quickfix buffers
 autocmd("FileType", {
@@ -113,3 +123,4 @@ local new_cmd = vim.api.nvim_create_user_command
 new_cmd("NvChadUpdate", function()
   require "nvchad.updater"()
 end, {})
+
