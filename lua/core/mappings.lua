@@ -26,6 +26,9 @@ M.general = {
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
 
+    --split vert
+    ["<C-\\>"] = { "<C-w>v", "Split vertical" },
+
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
 
