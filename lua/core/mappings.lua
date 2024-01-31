@@ -312,6 +312,7 @@ M.telescope = {
   n = {
     -- find
     ["<leader>sf"] = { "<cmd> Telescope find_files <CR>", "Search files" },
+    ["<leader>sw"] = { "<cmd> Telescope grep_string <CR>", "Search current Word" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
     ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "Find buffers" },
