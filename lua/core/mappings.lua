@@ -68,7 +68,7 @@ M.general = {
 
     ["<leader>fm"] = {
       function()
-        vim.lsp.buf.format { async = true }
+        vim.lsp.buf.format { async = true, shiftwidth = 4 }
       end,
       "LSP formatting",
     },
